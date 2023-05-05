@@ -1,21 +1,12 @@
 import './styles/style.css'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { $ } from 'jquery'
-
-// Move cursor
-
-$(document).mousemove(function (e) {
-  gsap.to('.cursor-circle', {
-    x: e.clientX,
-    y: e.clientY,
-    duration: 0.1,
-    ease: 'power2.out',
-  })
-})
 
 console.log('fuck')
 gsap.registerPlugin(ScrollTrigger)
+
+// Move cursor
+
 let tlMain = gsap
   .timeline({
     scrollTrigger: {
