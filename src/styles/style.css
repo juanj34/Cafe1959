@@ -20,3 +20,51 @@
 .js-badge:hover {
   background-color: rgb(228, 137, 193);
 }
+
+/* Disabled Arrow Button */
+.splide button:disabled {
+	opacity: 0.4;
+}
+/* Dark Sections */
+.is--dark .splide__arrow {
+	filter: invert(100%);
+}
+.is--dark .splide__pagination__page {
+	background-color: #dfdad5;
+}
+
+/* Pill slider */
+.splide.pill .splide__pagination {
+	display: none;
+}
+.splide__slide.is-active .slider-pill_photo {
+	transform: scale(1.2);
+}
+
+/* Square slider */
+.splide__slide.is-active .slider-square_img {
+	transform: scale(1.05);
+}
+.splide__slide.is-active .slider-square_photo {
+	transform: scale(1.0);
+}
+.splide__slide.is-active .text-opacity {
+	opacity: 1.0;
+}
+
+/* Tall slider */
+.splide.tall .splide__pagination {
+	display: none;
+}
+.splide__slide.is-active .text-opacity {
+	opacity: 1.0;
+}
+.splide__slide.is-active .slider-tall_img {
+	transform: scale(1.05);
+}
+.splide__slide.is-active .slider-tall_photo {
+	transform: scale(1.0);
+}
+.splide__slide.is-active .rounded {
+	border-radius: 0em;
+}
