@@ -119,3 +119,39 @@ tlsecond.to('.layout98_image', {
   scale: 1.5,
   duration: 1,
 })
+
+let lastScrollTop = 0
+const navbar = document.querySelector('.navbar10_component')
+const headerSection = document.querySelector('#hero') // Replace '#header' with your header section ID or class
+
+function updateNavbarStyle(scrollPos) {
+  if (scrollPos === 0) {
+    navbar.style.backgroundColor = 'rgba(255, 255, 255, 1)'
+    navbar.style.backdropFilter = 'none'
+  } else {
+    navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.5)'
+    navbar.style.backdropFilter = 'blur(10px)'
+  }
+}
+
+window.addEventListener(
+  'scroll',
+  function () {
+    const headerSectionBottom =
+      headerSection.getBoundingClientRect().bottom + window.scrollY
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop
+    updateNavbarStyle(currentScroll)
+
+    if (currentScroll > lastScrollTop) {
+      // Scrolling down
+      if (currentScroll > headerSectionBottom) {
+        gsap.to(navbar, { y: '-100%', duration: 0.3 })
+      }
+    } else {
+      // Scrolling up
+      gsap.to(navbar, { y: '0%', duration: 0.3 })
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll // For mobile or negative scrolling
+  },
+  false
+)
