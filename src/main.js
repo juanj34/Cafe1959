@@ -3,7 +3,6 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import $ from 'jquery'
 
-console.log('fuck')
 gsap.registerPlugin(ScrollTrigger)
 
 $(document).ready(function ($) {
